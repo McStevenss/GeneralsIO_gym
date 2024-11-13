@@ -79,6 +79,7 @@ class GymnasiumGenerals(gym.Env):
 
         # Create GUI for current render run
         if self.render_mode == "human":
+            # self.gui = GUI(self.game, self.agent_data, GuiMode.TRAIN)
             self.gui = GUI(self.game, self.agent_data, GuiMode.TRAIN)
 
         if "replay_file" in options:
@@ -103,7 +104,6 @@ class GymnasiumGenerals(gym.Env):
         npc_observation = self.game.agent_observation(self.npc.id).as_dict()
         npc_action = self.npc.act(npc_observation)
         actions = {self.agent_id: action, self.npc.id: npc_action}
-
         observations, infos = self.game.step(actions)
         infos = {agent_id: {} for agent_id in self.agent_ids}
 

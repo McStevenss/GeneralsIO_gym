@@ -1,0 +1,42 @@
+ep_len_mean: Average episode length. Shows how long the agent lasts in the environment before terminating, which can indicate learning stability.
+
+ep_rew_mean: Average episode reward. Negative values suggest the agent is facing challenges; ideally, you want this to increase over time as the agent learns.
+
+fps: Frames per second processed. Reflects training speed but doesn’t directly impact model performance.
+
+iterations: Number of iterations completed. Higher iterations usually correlate with more learning, but quality matters more than quantity.
+
+time_elapsed: Total time spent on training (in seconds). A reference for monitoring training duration.
+
+total_timesteps: Cumulative steps taken in the environment. Larger values mean more experience collected, contributing to the agent’s learning.
+
+approx_kl: Approximate Kullback-Leibler divergence. Measures the divergence between old and new policies; low values (like this) imply stable policy updates, which is desirable.
+
+clip_fraction: Fraction of actions clipped by the PPO algorithm. A low fraction indicates few actions exceed the clipping threshold, meaning less drastic policy updates.
+
+clip_range: Maximum allowable deviation for updates, controlling policy changes to avoid overfitting.
+
+entropy_loss: Entropy loss measures policy randomness; higher (less negative) values encourage exploration, while lower values indicate more deterministic behavior.
+
+explained_variance: Variance explained by the value function. High values (close to 1) show the value function is accurate in predicting returns, aiding in stable learning.
+
+learning_rate: Step size for each parameter update. Controls learning pace; a stable and appropriately scaled learning rate promotes steady improvement.
+
+Loss: Overall loss, combining policy and value losses. Lower losses over time indicate improved model accuracy.
+
+n_updates: Total number of updates performed. Higher values correspond with more learning iterations.
+
+policy_gradient_loss: Loss from the policy gradient; negative values indicate effective policy updates that move towards better actions.
+
+value_loss: Error in the value function's predictions. A high value may suggest the agent struggles to predict future rewards accurately, impacting learning stability.
+
+
+
+
+Training appears stable WHEN:
+    low approx_kl,
+    high explained_variance,
+    steady policy updates, 
+    
+    
+OTHER: negative rewards suggest the agent still has room for improvement.

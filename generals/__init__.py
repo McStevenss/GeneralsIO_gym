@@ -21,6 +21,11 @@ def _register_gym_generals_envs():
     )
 
     register(
+        id="gym-generals-simplified-v0",
+        entry_point="Custom_scripts.envs.Simplified_Generals:SimplifiedGymnasiumGenerals",
+    )
+
+    register(
         id="gym-generals-normalized-v0",
         entry_point="generals.envs.initializers:gyms_generals_normalized_v0",
     )

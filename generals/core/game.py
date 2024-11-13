@@ -117,7 +117,10 @@ class Game:
             )  # destination indices
 
             # Figure out the target square owner and army size
-            target_square_army = self.channels.armies[di, dj]
+            try:
+                target_square_army = self.channels.armies[di, dj]
+            except:
+                print(f"error moving army with cordinates {di,dj}, action: {moves[agent]}")
             target_square_owner_idx = np.argmax(
                 [self.channels.ownership[agent][di, dj] for agent in ["neutral"] + self.agents]
             )
@@ -142,8 +145,11 @@ class Game:
             # give all cells of loser to winner
             winner = self.agents[0] if self.agent_won(self.agents[0]) else self.agents[1]
             loser = self.agents[1] if winner == self.agents[0] else self.agents[0]
+            self.channels.ownership[loser] = np.array(self.channels.ownership[loser],dtype=bool)
             self.channels.ownership[winner] += self.channels.ownership[loser]
             self.channels.ownership[loser] = self.channels.passable * 0
+
+            print(f"Winner: {winner} | Looser: {loser}")
         else:
             self._global_game_update()
 

@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Train-Generals",
+            "type": "python",
+            "request": "launch",
+            "program": "Custom_scripts/training/train.py",
+            "console": "integratedTerminal",
+            "cwd": "/home/mans/personal_projects/RL_generals/",
+            "args": [
+                // "--data_path", "/media/tosep/internfeting/wheelscanning/tosep-ws-annotations/all_tyre_segments_test/tire_segments/tyre_reader_testset_from_2023-11-01to_2023-11-15_0/1699352721.369151_7669_2_e20_es15_g5_ga0_DEBEVEC_tyre_segment_without_grip_pattern.png",
+                "--continue_train_path", "logs/models/maskable_generals_200/final_model.zip"
+            ],
+            "env": {
+                "DISPLAY": ":1.0",
+                // "DISPLAY": "localhost:10.0"
+            }
+        }
+    ]
+}
