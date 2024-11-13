@@ -13,6 +13,9 @@
 [Installation](#-installation) • [Getting Started](#-getting-started) • [Customization](#-custom-grids) • [Environment](#-environment) • [Wiki](https://github.com/strakam/generals-bots/wiki)
 </div>
 
+> NOTICE: This is my implementation [of an Action Maskable PPO] with a custom environment wrapping the original one and simplifying it.
+> The action space has been flattened to 400 actions (currently not supporting splitting cells) and is then made realistically usable through action masking
+
 Generals-bots is a fast-paced strategy environment where players compete to conquer their opponents' generals on a 2D grid.
 While the goal is simple — capture the enemy general — the gameplay combines strategic depth with fast-paced action,
 challenging players to balance micro and macro-level decision-making.
